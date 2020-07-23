@@ -1,0 +1,69 @@
+html {
+    font-family: 'Work Sans', sans-serif;
+    color: #3A4451;
+}
+
+.clip-top {
+    -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+    clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
+}
+
+.-skew-4 {
+    transform: skewY(-4deg);
+}
+
+.skew-4 {
+    transform: skewY(4deg);
+}
+
+.navigation {
+    display: block;
+    height: 16px;
+    position: relative;
+    width: 16px;
+}
+
+.navigation:before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    width: 16px;
+    height: 13px;
+    border-top: 8px double #fff;
+    border-bottom: 2.5px solid #fff;
+}
+
+.navigation nav {
+    height: 100vh;
+    max-width: 320px;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    transition: right 0.3s;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navigation:focus nav {
+    right: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .navigation {
+        height: auto;
+        width: auto;
+    }
+
+    .navigation:before {
+        display: none;
+    }
+
+    .navigation nav {
+        height: auto;
+        position: relative;
+        max-width: 100%;
+        right: auto;
+        top: auto;
+    }
+}
